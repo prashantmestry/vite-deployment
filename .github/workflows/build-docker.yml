@@ -22,4 +22,4 @@ jobs:
       - name: push image to docker hub
         run: |
           docker login -u 9769268529 -p ${{secrets.DOCKER_TOKEN}}
-          docker push 9769268529/vite-image
+          docker push 9769268529/vite-image:latest
