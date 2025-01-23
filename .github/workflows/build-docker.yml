@@ -16,7 +16,7 @@ jobs:
 
       # Build image.
       - name: build image
-        run: docker build ./dist -t 9769268529/vite-image:latest
+        run: docker build . -t 9769268529/vite-image:latest
 
       # Push image to docker hub
       - name: push image to docker hub
