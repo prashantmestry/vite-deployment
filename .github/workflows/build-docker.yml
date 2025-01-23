@@ -16,10 +16,10 @@ jobs:
 
       # Build image.
       - name: build image
-        run: docker build . -t 9769268529/vite-image:latest
+        run: docker build . -t 9769268529/vite-image-new:latest
 
       # Push image to docker hub
       - name: push image to docker hub
         run: |
           docker login -u 9769268529 -p ${{secrets.DOCKER_TOKEN}}
-          docker push 9769268529/vite-image:latest
+          docker push 9769268529/vite-image-new:latest
