@@ -1,7 +1,7 @@
 name: Build and Publish image to Docker hub
 
 on:
-  push: 
+  push:
     branches:
       - main
   workflow_dispatch:
@@ -9,17 +9,17 @@ on:
 jobs:
   publish_images:
     runs-on: ubuntu-latest
-      steps:
+    steps:
       # Checkout the repo.
-        - name: Checkout Code
-          uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      # Build image.    
-        - name: build image
-          run: docker build ./dist -t 9769268529/vite-image:latest
-      
-      # Push image to docker hub    
-        - name: push image to docker hub
-          run: |
-            docker login -u 9769268529 -p ${{secrets.DOCKER_TOKEN}}
-            docker push 9769268529/vite-image
+      # Build image.
+      - name: build image
+        run: docker build ./dist -t 9769268529/vite-image:latest
+
+      # Push image to docker hub
+      - name: push image to docker hub
+        run: |
+          docker login -u 9769268529 -p ${{secrets.DOCKER_TOKEN}}
+          docker push 9769268529/vite-image
